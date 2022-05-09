@@ -6,6 +6,7 @@ taking into account single characters and therefore giving back
 the original string.
 '''
 
+
 def mysum(*args):
     '''
     Takes a variable number of arguments and return their sum.
@@ -16,6 +17,7 @@ def mysum(*args):
         curr_sum += val
     return curr_sum
 #---
+
 
 if __name__ == '__main__':
 

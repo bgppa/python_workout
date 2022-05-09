@@ -14,6 +14,7 @@ def to_decimal_value(char_digit):
     return "Not found!"
 #--
 
+
 if __name__ == '__main__':
 
     converted = 0

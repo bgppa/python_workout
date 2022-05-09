@@ -3,6 +3,7 @@ Number guessing game
 """
 import numpy as np
 
+
 def guessing_game():
     """
     Game where the user should guess a hidden number.

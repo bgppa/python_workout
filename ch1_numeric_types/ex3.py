@@ -2,6 +2,7 @@
 Measuring the average of user input
 '''
 
+
 def f_average(val_list):
     '''
     Compute the average value in a list of floats, assumed valid.
@@ -11,6 +12,7 @@ def f_average(val_list):
         res += i
     return res / len(val_list)
 #---
+
 
 if __name__ == '__main__':
     user_input = 'No'
