@@ -9,17 +9,28 @@ def guessing_game():
     """
     num = np.random.randint(100)
     guess = -1
-    lifes = 10
+    lifes = 5
     while guess != num and lifes > 0:
-        guess = int(input(f"Enter an integer [{lifes} tries]: "))
-        if guess == num:
-            print("*Guessed*")
+        raw_guess = input(f"Enter an integer [{lifes} tries]: ")
+        # Verify input correctness
+        try:
+            guess = int(raw_guess)
+        except ValueError:
+            print("Please insert just an integer")
         else:
-            lifes -= 1
             if guess > num:
+                lifes -= 1
                 print("Too high!")
-            else:
+            elif guess < num:
+                lifes -= 1
                 print("Too low!")
+
+    # only two causes for exiting loop: guess==num, or lifes <= 0
+    if guess == num:
+        print("You WIN!")
+    else:
+        print("You LOSE")
+
     return num
 #--
 
