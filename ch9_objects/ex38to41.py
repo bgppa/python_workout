@@ -1,6 +1,8 @@
 '''
 Creating some classes representing ice creams.
-It mixed exercises 38, 39
+It mixed exercises 38, 39, 40 and 41.
+Important to point out the difference between
+class.nameofvariable, and self.nameofvariable.
 '''
 
 class Scoop():
@@ -22,16 +24,20 @@ class Bowl():
     '''
     Class representing a set of Scoops
     '''
-    def __init__(self, limit = 3):
+    # By default, all Bowls are limited to 2 scoops
+    limit = 3
+
+    def __init__(self):
         # initially, empty
         self.contained_scoops = []
-        self.limit = limit
 
     def add_scoop(self, *newscoops):
         '''
         can give an arbitrary number of scoops
         '''
         for single_scoop in newscoops:
+            # if the instance has a different self.limit value, that one
+            # will constitute the limit. Otherwise read Bowl.limit
             if len(self.contained_scoops) < self.limit:
                 self.contained_scoops.append(single_scoop)
             else:
@@ -60,7 +66,8 @@ class FixedBowl(Bowl):
     This is a Bowl with a max hard set to be 2.
     '''
     def __init__(self):
-        Bowl.__init__(self, 2)
+        Bowl.__init__(self)
+        self.limit = 2
 
     # All the rest is the same, therefore I don't need to change nothing else.
 #---
@@ -72,7 +79,7 @@ if __name__ == '__main__':
     for icecream in result:
         print(icecream)
 
-    bwl = Bowl(3)
+    bwl = Bowl()
     for nth in result:
         bwl.add_scoop(nth)
 
